@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qien-quiz</title>
+    <meta name="description" content="Weekopdracht 3 Qien Masterclass">
+    <link rel="stylesheet" href="css/styling.css">
+
+    <script>
+
+        var correct = 0;
+        function controleerAntwoordVraag1() {
+            // console.log("test 1")
+            if (document.getElementById("vraag1").value == (document.getElementById("correct").value)) {
+                document.getElementById("geefAntwoordVraag1Weer").innerHTML = "Correct"
+                correct++;
+            } else {
+                document.getElementById("geefAntwoordVraag1Weer").innerHTML = "Niet correct"
+            }
+        }
+
+        function controleerAntwoordVraag2() {
+            // console.log("test 2")
+            var a = document.getElementById("input");
+
+            if ((a.value == "head") || (a.value == "<head>") || (a.value == "head-")) {
+                document.getElementById("geefAntwoordVraag2Weer").innerHTML = "Correct"
+                correct++;
+            } else {
+                document.getElementById("geefAntwoordVraag2Weer").innerHTML = "Niet correct"
+            }
+        }
+
+        function controleerAntwoordVraag3() {
+            // console.log("test 3")
+            const checkBox1 = document.getElementById("myCheck1");
+            const checkBox2 = document.getElementById("myCheck2");
+
+            if ((checkBox1.checked == true) && (checkBox2.checked == true)) {
+                document.getElementById("geefAntwoordVraag3Weer").innerHTML = "Correct"
+                correct++;
+            } else {
+                document.getElementById("geefAntwoordVraag3Weer").innerHTML = "Niet correct"
+            }
+        }
+
+        function controleerAntwoordVraag4() {
+            // console.log("test 4")
+            const checkBox3 = document.getElementById("myCheck3");
+            const checkBox4 = document.getElementById("myCheck4");
+            const checkBox5 = document.getElementById("myCheck5");
+
+
+            if ((checkBox3.checked == true) && (checkBox4.checked == true) && (checkBox5.checked == true)) {
+                document.getElementById("geefAntwoordVraag4Weer").innerHTML = "Correct"
+                correct++;
+            } else {
+                document.getElementById("geefAntwoordVraag4Weer").innerHTML = "Niet correct"
+            }
+        }
+
+        function controleerAntwoordVraag5() {
+            // console.log("test 5")
+            const radioButton3 = document.getElementById("myRadio3");
+
+            if ((radioButton3.checked == true)) {
+                document.getElementById("geefAntwoordVraag5Weer").innerHTML = "Correct"
+                correct++;
+            } else {
+                document.getElementById("geefAntwoordVraag5Weer").innerHTML = "Niet correct"
+            }
+        }
+
+        function controleerAntwoordVraag6() {
+            // console.log("test 6")
+            const radioButton6 = document.getElementById("myRadio6");
+
+            if ((radioButton6.checked == true)) {
+                document.getElementById("geefAntwoordVraag6Weer").innerHTML = "Correct"
+                correct++;
+            } else {
+                document.getElementById("geefAntwoordVraag6Weer").innerHTML = "Niet correct"
+            }
+        }
+
+        function controleerAlleAntwoorden() {
+            
+            var knop = document.getElementById("controleerAlleAntwoorden");
+
+            knop.addEventListener("click", controleerAntwoordVraag1);
+            knop.addEventListener("click", controleerAntwoordVraag2);
+            knop.addEventListener("click", controleerAntwoordVraag3);
+            knop.addEventListener("click", controleerAntwoordVraag4);
+            knop.addEventListener("click", controleerAntwoordVraag5);
+            knop.addEventListener("click", controleerAntwoordVraag6);
+
+            document.getElementById("aantalCorrecteAntwoorden").innerHTML = "Aantal vragen correct beantwoord: " + correct + " van de 6.";
+            correct = 0;
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div id="websiteContainer">
+
+        <header>
+            <nav>
+                <div class="container">
+                    <div class="nav-wrapper-quiz">
+                        <a id="logo-quiz" href="https://www.qien.nl/" target="_blank">Qien Coding Institute</a>
+
+                        <div class="navbar-quiz">
+                            <div class="dropdown-quiz">
+                                <button class="dropbtn-quiz">HTML</button>
+                                <div class="dropdown-content-quiz">
+                                    <a href="https://www.qien.nl/" target="_blank">Naar qien.nl</a>
+                                    <a href="#">Link 2</a>
+                                    <a href="#">Link 3</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-quiz">
+                                <button class="dropbtn-quiz">CSS</button>
+                                <div class="dropdown-content-quiz">
+                                    <a href="#">Link 1</a>
+                                    <a href="#">Link 2</a>
+                                    <a href="#">Link 3</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-quiz">
+                                <button class="dropbtn-quiz">JS</button>
+                                <div class="dropdown-content-quiz">
+                                    <a href="#">Link 1</a>
+                                    <a href="#">Link 2</a>
+                                    <a href="#">Link 3</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-quiz">
+                                <button class="dropbtn-quiz">Andere pagina's</button>
+                                <div class="dropdown-content-quiz">
+                                    <a href="index.html">Index</a>
+                                    <a href="pagina 2.html">Pagina 2</a>
+                                    <a href="table.html">Uitleg tabel</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="header-section">
+                <div class="container">
+                    <div class="header-outer-wrapper">
+                        <div class="header-text-wrapper">
+                            <h2>Qien-quiz</h2>
+                            <p class="paragraph-large">Vragen over HTML, CSS en JS om je skills te testen
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </header>
+
+        <main>
+            <section>
+                <div class="container">
+                    <div>
+                        <h3>Welkom bij de Qien-quiz! Doe je mee?</h3>
+
+                        <!-- Vraag 1-->
+
+                        <p>1. Waar komt de hoofdcontent van een pagina?</p>
+                        <select id="vraag1">
+                            <option></option>
+                            <option value="head">
+                                < head> element
+                            </option>
+                            <option value="style">
+                                < style> element
+                            </option>
+                            <option value="body" id="correct">
+                                < body> element
+                            </option>
+                        </select>
+                        <p id="geefAntwoordVraag1Weer"></p>
+
+                        <!-- Vraag 2-->
+
+                        <p>2. Vul de ontbrekende code in:</p>
+                        <br>
+                        <p>In de <input type="vraag2" id="input">
+                            tag plaats je informatie over de pagina, zoals de titel
+                        <p id="geefAntwoordVraag2Weer"></p>
+
+                        <!-- Vraag 3-->
+
+                        <p>3. Welke stelling(en) zijn/is juist?</p>
+                        <input type="checkbox" id="myCheck1"> Deze vraag is het lichtpuntje in mijn leven. <br>
+                        <input type="checkbox" id="myCheck2"> Deze vragen vormen de reden waarom ik 's ochtends
+                        opsta.<br>
+                        <br>
+                        <p id="geefAntwoordVraag3Weer"></p>
+
+                        <!-- Vraag 4-->
+                        <p>4. Welke stelling(en) zijn/is juist?</p>
+                        <input type="checkbox" id="myCheck3"> HTML verzorgt de inhoud van een website. <br>
+                        <input type="checkbox" id="myCheck4"> CSS verzorgt de styling van een website.<br>
+                        <input type="checkbox" id="myCheck5"> JS verzorgt de interactiviteit van een website.<br>
+                        <br>
+                        <p id="geefAntwoordVraag4Weer"></p>
+
+                        <!-- Vraag 5-->
+                        <p>5. Welke stelling is juist?</p>
+                        <input type="radio" id="myRadio1" name="vraag5"> 'HTML' staat voor 'Hypertext Markup
+                        Language'<br>
+                        <input type="radio" id="myRadio2" name="vraag5"> 'CSS' staat voor 'Cascading Style Sheets'<br>
+                        <input type="radio" id="myRadio3" name="vraag5"> Beide stellingen zijn juist.<br>
+                        <br>
+                        <p id="geefAntwoordVraag5Weer"></p>
+
+
+                        <!-- Vraag 6-->
+
+                        <p>6. Welke stelling is juist?</p>
+                        <input type="radio" id="myRadio4" name="vraag6"> Zonder een <i>body</i> functioneert een
+                        HTML-bestand niet.<br>
+                        <input type="radio" id="myRadio5" name="vraag6"> Een <i>footer</i> is verplicht in een
+                        HTML-bestand.<br>
+                        <input type="radio" id="myRadio6" name="vraag6"> Beide stellingen zijn onjuist.<br>
+                        <br>
+                        <p id="geefAntwoordVraag6Weer"></p>
+                        <button onclick="controleerAlleAntwoorden()" id="controleerAlleAntwoorden">Controleer
+                            antwoorden</button>
+                        <p id="aantalCorrecteAntwoorden">Druk na het beantwoorden 3 keer op deze knop om de verschillende functies van deze knop achtereenvolgens te activeren.   </p>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer-quiz">
+
+            <small>© 2020 Klaas </small>
+
+        </footer>
+
+    </div>
+</body>
+
+</html>
